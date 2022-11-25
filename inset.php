@@ -1,3 +1,30 @@
+<?php 
+//menyabungkan koneksi ke datbase 
+require 'functions.php';
+//cek apakah tombol submit sudah ditekan 
+
+if (isset($_POST['submit'])) {
+
+  if( inset($_POST) > 0 ) {
+		echo "
+			<script>
+				alert('data berhasil ditambahkan!');
+				document.location.href = 'index.php';
+			</script>
+		";
+	} else {
+		echo "
+			<script>
+				alert('data gagal ditambahkan!');
+				document.location.href = 'index.php';
+			</script>
+		";
+	}
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,25 +61,24 @@
             </div>
             <div class="card">
               <div class="card-body p-5">
-                <form>
+                <form action="" method="POST">
                   <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                    <input type="text"  name ="nama" class="form-control" id="nama" aria-describedby="nama"  required/>
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required />
                   </div>
                   <div class="mb-3">
                     <label for="jurusan" class="form-label">Jurusan</label>
-                    <input type="text" class="form-control" id="jurusan" aria-describedby="jurusan" />
+                    <input type="text" name="jurusan"  class="form-control" id="jurusan" aria-describedby="jurusan"  required/>
                   </div>
                   <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" id="alamat" aria-describedby="alamat" />
+                    <input type="text" name="alamat"  class="form-control" id="alamat" aria-describedby="alamat" required />
                   </div>
-
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit"   name = "submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>
             </div>

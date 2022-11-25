@@ -46,8 +46,12 @@ $bukutamu = query("SELECT * FROM tamu");
                     <button type="submit" class="btn btn-primary">Save</button>
                   </div>
 
+
                   <div class="col-12">
-                    <button type="submit" class="btn btn-warning">Get tasks</button>
+                  <a class="btn btn-warning" href="inset.php" role="button">ADD Buku Tamu</a>
+
+
+                    
                   </div>
                 </form>
 
@@ -72,10 +76,12 @@ $bukutamu = query("SELECT * FROM tamu");
                       <td><?= $row['jurusan'] ?></td>
                       <td><?= $row['alamat'] ?></td>
                       <td>
-                        <a href=""><button type="submit" class="btn btn-danger">Delete</button></a>
+                      <a class="btn btn-danger" href="deleted.php?id=<?= $row['id']; ?>"  type="submit" role="button">Deleted</a>
+                        
                         <br />
-                        <br />
-                       <a href=""><button type="submit" class="btn btn-success ">Edit</button>
+                        <br>
+                        <a class="btn btn-success" href="" type="submit" role="button">Edit</a>
+                       
                        </td></a> 
                     </tr>
                     <?php  $i++; ?>
