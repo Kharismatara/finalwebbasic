@@ -76,12 +76,12 @@ $bukutamu = query("SELECT * FROM tamu");
                       <td><?= $row['jurusan'] ?></td>
                       <td><?= $row['alamat'] ?></td>
                       <td>
-                      <a class="btn btn-danger" href="deleted.php?id=<?= $row['id']; ?>"  type="submit" role="button">Deleted</a>
-                        
+                      
+                      <a class="btn btn-success" href="update.php?id=<?= $row['id']; ?>"  type="submit" role="button">Edit</a>
                         <br />
                         <br>
-                        <a class="btn btn-success" href="" type="submit" role="button">Edit</a>
-                       
+                        
+                        <a class="btn btn-danger" href="deleted.php?id=<?= $row['id']; ?>"  type="submit" role="button">Deleted</a>
                        </td></a> 
                     </tr>
                     <?php  $i++; ?>

@@ -39,4 +39,29 @@ function hapus($id) {
 	mysqli_query($conn, "DELETE FROM tamu WHERE id = $id");
 	return mysqli_affected_rows($conn);
 }
+
+function update($data) {
+	global $conn;
+	
+	$id = $data['id'];
+	$nama = htmlspecialchars($data["nama"]);
+	$email = htmlspecialchars($data["email"]);
+	$jurusan = htmlspecialchars($data["jurusan"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+
+
+	$query = "UPDATE tamu SET
+				
+				nama = '$nama',
+				email = '$email',
+				jurusan = '$jurusan',
+				alamat ='$alamat'
+			
+			  WHERE id = $id
+			";
+
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);	
+}
 ?>
