@@ -64,4 +64,14 @@ function update($data) {
 
 	return mysqli_affected_rows($conn);	
 }
+function search($keyword) {
+	$query = "SELECT * FROM tamu
+				WHERE
+			  nama LIKE '%$keyword%' OR
+			  email LIKE '%$keyword%' OR
+			  jurusan LIKE '%$keyword%' OR
+			  alamat LIKE '%$keyword%'
+			";
+	return query($query);
+}
 ?>

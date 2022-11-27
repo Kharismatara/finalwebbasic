@@ -4,6 +4,10 @@ require 'functions.php';
 
 $bukutamu = query("SELECT * FROM tamu");
 
+if( isset($_POST["cari"]) ) {
+	$bukutamu = search($_POST["keyword"]);
+}
+
 ?>
 
 
@@ -34,16 +38,16 @@ $bukutamu = query("SELECT * FROM tamu");
               <div class="card-body p-4">
                 <h4 class="text-center my-3 pb-3">Data Tamu Yang Datang</h4>
 
-                <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" action="" method="POST">
                   <div class="col-12">
                     <div class="form-outline">
-                      <input type="text" id="form1" class="form-control" />
-                      <label class="form-label" for="form1">Enter a task here</label>
+                      <input type="text" id="form1" class="form-control" name="keyword"/>
+                      <label class="form-label" for="form1">"masukkan keyword pencarian..</label>
                     </div>
                   </div>
 
                   <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" name="cari">Cari</button>
                   </div>
 
 
